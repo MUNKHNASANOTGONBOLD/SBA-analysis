@@ -1,10 +1,6 @@
 # Exploring SBA Loan Data: Team 2
 
-End-to-end data analytics project: cleaning, mapping, ETL, SQL analysis, and Tableau visualization of real U.S. Small Business Administration (SBA) 7(a)/504 loan data.
-
-## Objective
-
-Analyze SBA loan data to surface insights on total loan volume, top-performing banks and franchises, yearly program trends, and payment status. Present the findings in stakeholder reports and an interactive Tableau dashboard.
+My team analyzed about 249,000 public SBA loan records to compare approvals across lenders, districts, industries, and fiscal years.
 
 ## Dataset
 
@@ -15,21 +11,17 @@ Analyze SBA loan data to surface insights on total loan volume, top-performing b
 ## Pipeline
 
 1. **Data Cleaning (Excel)**: removed irrelevant/missing records, standardized formatting.
-2. **Data Mapping**: defined technical-to-business name mappings and data types (see `docs/SBA_team2__Data_Mapping_Document.xlsx` and `docs/7a_504_foia_data_dictionary.xlsx`).
-3. **ETL (SSIS)**: imported cleaned data into a SQL Server / Postgres reporting table via an SSIS package (Flat File Source → Data Conversion → OLE DB Destination). See `screenshots/ssis.png`.
+2. **Data Mapping**: defined technical-to-business name mappings and data types (see `SBA_Data_Mapping_Document.xlsx` and `docs/7a_504_foia_data_dictionary.xlsx`).
+3. **ETL (SSIS)**: imported cleaned data into a SQL Server / Postgres reporting table via an SSIS package (Flat File Source → Data Conversion → OLE DB Destination).
 4. **SQL Analysis**: 15 analytical queries covering loan volume by district office, top banks/franchises, yearly trends by program, and payment status breakdown. See `sql/sba_loan_analysis_queries.sql`.
 5. **Reporting**: query outputs exported as flat files for stakeholder distribution.
-6. **Visualization (Tableau)**: interactive dashboard built from the cleaned dataset. See `tableau/sba.twb`.
+6. **Visualization (Tableau)**: interactive dashboard built from the cleaned dataset.
 
-## Repo structure
+## Files
 
-```
-data/       Cleaned, mapped loan dataset (CSV, ~249K rows)
-sql/        SQL analysis queries (15 stakeholder-facing queries)
-tableau/    Tableau workbook (.twb)
-docs/       Project brief, data dictionary, data mapping document
-screenshots/ SSIS package design, SQL query screenshots, mapping docs
-```
+- [Reporting queries](sql/sba_loan_analysis_queries.sql)
+- [Mapping workbook](SBA_Data_Mapping_Document.xlsx)
+- [Source data dictionary](docs/7a_504_foia_data_dictionary.xlsx)
 
 ## Key fields
 
